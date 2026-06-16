@@ -25,8 +25,9 @@ Este repositório contém a **Prova de Conceito (PoC) funcional** do **ChargeGri
 
 O projeto evolui do planejamento teórico da Sprint 1 para um ambiente de simulação que demonstra:
 - ⚡ Orquestração inteligente de potência
-- 💳 Faturamento dinâmico e interoperável
-- 🤖 Suporte por Inteligência Artificial (RAG)
+- 🌡️ Economia em caso de Projeto de Conforto Térmico
+- 🔄 Carregamento EV - KM em kWh
+- 🌱 Simulação de Emissão de Carbono: EV vs. Gasolina
 
 **Desenvolvido em Google Colaboratory** para máxima acessibilidade e escalabilidade.
 
@@ -50,27 +51,6 @@ Este projeto foi desenvolvido **100% em Google Colaboratory** e pode ser executa
 4. **Execute as células** sequencialmente:
    - Use **Shift + Enter** para executar cada célula
    - Ou clique em **Ambiente de Execução > Executar tudo**
-
-### 💾 Salvar Seu Progresso
-```python
-# Salvar no Google Drive
-from google.colab import drive
-drive.mount('/content/drive')
-
-# Copiar arquivos para o Drive
-!cp -r /content/results /content/drive/My\ Drive/ChargeGrid_Results
-
----
-
-## 📑 Índice
-
-- [O Problema Central](#-o-problema-central)
-- [Arquitetura da Solução](#-arquitetura-da-solução)
-- [Pilares Implementados](#-pilares-implementados)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Como Executar](#-como-executar)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Equipe](#-equipe)
 
 ---
 
@@ -103,43 +83,6 @@ O sistema opera em uma arquitetura híbrida de **três níveis**:
 ### 1. ⚡ Simulação de Orquestração de Energia /Gerenciamento Inteligente de Demanda (DLM)
 
 simula um sistema de gestão de energia (EMS) para uma galeria comercial equipada com painéis solares, sistemas de armazenamento (BESS) e carregadores de veículos elétricos (EVs). O objetivo é otimizar o fluxo energético, maximizando o autoconsumo solar e minimizando custos operacionais.
-
-Orquestração: 
-
-PAINÉIS 
-    ↓
-INVERSOR (Com medidor inteligente)
-    │
-    ├─→ PRIORIDADE 1: CARREGADOR 
-    │   ├─ Fonte: Painéis + Bateria + Rede
-    │   ↓
-    │   MEDIDOR MID 
-    │   ↓
-    │   CARREGADOR EV
-    │   ↓
-    │   VEÍCULO ELÉTRICO → Roteador → Servidor do SEMS Portal → APP SolarGo
-    │
-    ├─→ PRIORIDADE 2: BATERIA (Armazenamento)
-    │   ├─ Carrega: Quando há excedente
-    │   ├─ Descarrega: Quando há déficit
-    │   ↓
-    │   BATERIA 
-    │
-    └─→ PRIORIDADE 3: EDIFICAÇÃO (Consumo residual)
-        ├─ Fonte: Painéis + Bateria + Rede
-        ↓
-        BARRAMENTO PRINCIPAL
-        ↓
-        Circuitos secundários
-        ├─ Iluminação
-        ├─ Ar condicionado
-        └─ Tomadas
-
-MEDIDOR INTELIGENTE 
-├─ Mede tudo em tempo real
-├─ Comunica ao inversor via RS485
-├─ Registra dados
-└─ Envia ao servidor SEMS
 
 #### Fases Operacionais
 
@@ -253,3 +196,20 @@ O script processa os dados de entrada e retorna:
 * **📉  Redução de Emissão:** O ganho ambiental líquido ao optar pelo EV.
 * **🌱 Equivalência em Árvores:** Quantidade de árvores necessárias para compensar a emissão evitada.
 * **✈️ Equivalência em Voo:** Distância aérea equivalente ao impacto evitado.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
